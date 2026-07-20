@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #000000;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -30%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    z-index: 0;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #888;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Главный блок */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 60px 100px;
+    position: relative;
+    z-index: 5;
+    gap: 40px;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.hero {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 110px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -3px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.hero .subtitle {
+    font-size: 48px;
+    font-weight: 300;
+    color: #aaaaaa;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: black;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+    background: #e0e0e0;
+}
+
+.hero-image {
+    flex: 1.5;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Безопасность */
+.security {
+    padding: 80px 60px;
+    position: relative;
+    z-index: 5;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.security-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.security-title span {
+    background: linear-gradient(135deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.security-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.security-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.security-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 35px;
+    transition: 0.3s;
+}
+
+.security-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+.security-card h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.security-card p {
+    color: #888;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Функции */
+.functions {
+    padding: 80px 60px;
+    position: relative;
+    z-index: 5;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.functions-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.functions-title span {
+    background: linear-gradient(135deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.functions-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.functions-list {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px 40px;
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.functions-list.expanded {
+    max-height: 1500px;
+}
+
+.functions-list ul {
+    list-style: none;
+    columns: 2;
+    column-gap: 40px;
+}
+
+.functions-list li {
+    color: #ccc;
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    padding-left: 20px;
+}
+
+.functions-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.expand-btn {
+    display: block;
+    margin: 25px auto 0;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.expand-btn:hover {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+/* Chams */
+.chams {
+    padding: 80px 60px;
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.chams-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.chams-title span {
+    background: linear-gradient(135deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chams-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.chams-preview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.chams-preview img {
+    max-width: 100%;
+    width: 900px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.05);
+}
+
+.chams-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.chams-type {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 20px 25px;
+    text-align: center;
+    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.chams-type:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Меню */
+.menu-section {
+    padding: 80px 60px;
+    position: relative;
+    z-index: 5;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.menu-title span {
+    background: linear-gradient(135deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menu-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.menu-preview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.menu-preview img {
+    max-width: 100%;
+    width: 1000px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.08);
+}
+
+.menu-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.menu-feature {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.menu-feature:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-feature h3 {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.menu-feature p {
+    color: #888;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Цены */
+.pricing {
+    padding: 80px 60px;
+    position: relative;
+    z-index: 5;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.pricing-title span {
+    background: linear-gradient(135deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pricing-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 35px;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card.popular {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.06);
+    transform: scale(1.05);
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.pricing-period {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pricing-price {
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.pricing-price span {
+    font-size: 30px;
+    color: #888;
+    margin-left: 5px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    color: #ccc;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.pricing-btn:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #555;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    z-index: 5;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .functions-list ul {
+        columns: 1;
+    }
+    .pricing-card.popular {
+        transform: scale(1);
+    }
+    .pricing-card.popular:hover {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 55px; }
+    .hero .subtitle { font-size: 24px; letter-spacing: 4px; }
+    .security-title, .functions-title, .chams-title, .menu-title, .pricing-title {
+        font-size: 28px;
+    }
+    header, .hero-wrapper, .security, .functions, .chams, .menu-section, .pricing {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    nav { display: none; }
+}
